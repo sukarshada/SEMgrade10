@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Active and Passive Voice Challenge - Grade 10</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eef2ff 0%, #fff7ed 50%, #fdf2f8 100%);
+      color: #1f2937;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+    .hero, .section {
+      background: rgba(255,255,255,0.97);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+      margin-bottom: 22px;
+    }
+    h1, h2, h3 { margin-top: 0; }
+    .subtitle {
+      color: #6b7280;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .teacher {
+      display: inline-block;
+      margin-top: 10px;
+      background: #ede9fe;
+      color: #5b21b6;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .lesson-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .info-box {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 14px;
+      font-weight: 700;
+    }
+    .grid { display: grid; gap: 16px; }
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+    .pill {
+      display: inline-block;
+      margin-bottom: 12px;
+      background: #fff7ed;
+      color: #9a3412;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-weight: 700;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 16px;
+    }
+
+    button {
+      border: none;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #4f46e5;
+      color: white;
+      transition: 0.2s ease;
+    }
+    button:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+    .secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      background: #f9fafb;
+      color: #111827;
+      border: 1px solid #d1d5db;
+      margin-bottom: 10px;
+    }
+    .option-btn.correct {
+      background: #dcfce7;
+      border-color: #22c55e;
+    }
+    .option-btn.wrong {
+      background: #fee2e2;
+      border-color: #ef4444;
+    }
+    .option-btn.locked {
+      cursor: default;
+    }
+
+    .sentence {
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      font-size: 16px;
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+      min-height: 24px;
+    }
+    .correct-text { color: #15803d; }
+    .wrong-text { color: #b91c1c; }
+
+    .score-wrap {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 18px;
+    }
+    .score-box {
+      font-size: 20px;
+      font-weight: bold;
+      background: #fff7ed;
+      border: 1px solid #fdba74;
+      padding: 14px 16px;
+      border-radius: 16px;
+      display: inline-block;
+    }
+    .small {
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .match-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .check-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #6b7280;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    ul.lesson-flow li { margin-bottom: 8px; line-height: 1.7; }
+
+    @media (max-width: 600px) {
+      .hero, .section { padding: 18px; border-radius: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <h1>Active and Passive Voice Master Class</h1>
+      <p class="subtitle">
+        A bigger, fuller, more challenging one-hour lesson for smart 10th grade EFL students.
+        The class starts from the beginning, then moves into deeper practice with many activities:
+        noticing, grammar focus, identification, transformation, error correction, meaning focus,
+        long passive voice question sets, and a final writing challenge.
+      </p>
+      <div class="teacher">Teacher: Sema Abed</div>
+
+      <div class="lesson-info">
+        <div class="info-box">Grade: 10</div>
+        <div class="info-box">English for Foreigners</div>
+        <div class="info-box">Level: A1 but Challenging</div>
+        <div class="info-box">Topic: Active & Passive Voice</div>
+        <div class="info-box">Length: 1 Hour</div>
+        <div class="info-box">Many Interactive Tasks</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="pill">Class Plan</span>
+      <h2>Suggested 1-Hour Flow</h2>
+      <ul class="lesson-flow">
+        <li><strong>7 minutes:</strong> notice the difference and discuss meaning.</li>
+        <li><strong>8 minutes:</strong> simple grammar explanation from the start.</li>
+        <li><strong>8 minutes:</strong> identify active vs passive.</li>
+        <li><strong>8 minutes:</strong> choose the correct verb form.</li>
+        <li><strong>8 minutes:</strong> change active into passive.</li>
+        <li><strong>7 minutes:</strong> correct the mistakes.</li>
+        <li><strong>8 minutes:</strong> long passive voice question set.</li>
+        <li><strong>6 minutes:</strong> mini writing and final challenge.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <span class="pill">Part 1</span>
+      <h2>Start from the Beginning</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Active Voice</h3>
+          <p class="sentence"><strong>The scientist discovered the cure.</strong></p>
+          <p>The subject (<strong>the scientist</strong>) does the action.</p>
+          <p><strong>Pattern:</strong> Subject + Verb + Object</p>
+        </div>
+        <div class="card">
+          <h3>Passive Voice</h3>
+          <p class="sentence"><strong>The cure was discovered by the scientist.</strong></p>
+          <p>The subject (<strong>the cure</strong>) receives the action.</p>
+          <p><strong>Pattern:</strong> Object + be + past participle (+ by + subject)</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="margin-top:14px;">
+        <div class="card">
+          <h3>Why passive?</h3>
+          <ul>
+            <li>to focus on the action</li>
+            <li>to focus on the result</li>
+            <li>when the doer is unknown</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Be verbs</h3>
+          <ul>
+            <li>am / is / are</li>
+            <li>was / were</li>
+            <li>will be</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Past participles</h3>
+          <ul>
+            <li>write → written</li>
+            <li>make → made</li>
+            <li>discover → discovered</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="pill">Part 2</span>
+      <h2>Noticing Task: What Changes?</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <p class="sentence"><strong>The police arrested the thief.</strong></p>
+        </div>
+        <div class="card">
+          <p class="sentence"><strong>The thief was arrested by the police.</strong></p>
+        </div>
+      </div>
+      <div class="grid grid-2" style="margin-top:14px;">
+        <div class="card">
+          <h3>Discuss</h3>
+          <ul>
+            <li>Which sentence starts with the doer?</li>
+            <li>Which sentence starts with the receiver?</li>
+            <li>Which one sounds more formal?</li>
+            <li>Which one focuses on the result?</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Teacher prompt</h3>
+          <p>Ask students why newspapers, reports, and formal writing often use the passive.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="pill">Part 3</span>
+      <h2>Activity A: Active or Passive?</h2>
+      <p>Choose the correct answer for each sentence.</p>
+
+      <div class="card">
+        <p class="sentence"><strong>1. The windows were cleaned yesterday.</strong></p>
+        <div id="ap1"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>2. The students finished the project.</strong></p>
+        <div id="ap2"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>3. A new hospital will be opened next year.</strong></p>
+        <div id="ap3"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>4. My father drives this car.</strong></p>
+        <div id="ap4"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>5. The letters were sent by the manager.</strong></p>
+        <div id="ap5"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>6. The chef prepares the food every morning.</strong></p>
+        <div id="ap6"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="pill">Part 4</span>
+      <h2>Activity B: Choose the Correct Passive Form</h2>
+      <p>These are more challenging. Focus on the form very carefully.</p>
+
+      <div class="card">
+        <p class="sentence"><strong>1. They build houses in this town.</strong></p>
+        <div id="cf1"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>2. Someone stole my bike.</strong></p>
+        <div id="cf2"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>3. The company will announce the results tomorrow.</strong></p>
+        <div id="cf3"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>4. People speak Arabic in many countries.</strong></p>
+        <div id="cf4"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="pill">Part 5</span>
+      <h2>Activity C: Change Active into Passive</h2>
+      <p>Write the passive sentence. These are open questions.</p>
+
+      <div class="card">
+        <p class="sentence"><strong>1. The students cleaned the classroom.</strong></p>
+        <input type="text" id="t1" placeholder="Write the passive sentence here" />
+        <button onclick="checkTransformation(1)">Check</button>
+        <div class="feedback" id="f1"></div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>2. Shakespeare wrote Hamlet.</strong></p>
+        <input type="text" id="t2" placeholder="Write the passive sentence here" />
+        <button onclick="checkTransformation(2)">Check</button>
+        <div class="feedback" id="f2"></div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>3. The school will organize a science fair.</strong></p>
+        <input type="text" id="t3" placeholder="Write the passive sentence here" />
+        <button onclick="checkTransformation(3)">Check</button>
+        <div class="feedback" id="f3"></div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>4. People speak English all over the world.</strong></p>
+        <input type="text" id="t4" placeholder="Write the passive sentence here" />
+        <button onclick="checkTransformation(4)">Check</button>
+        <div class="feedback" id="f4"></div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>5. The mechanic repaired the car.</strong></p>
+        <input type="text" id="t5" placeholder="Write the passive sentence here" />
+        <button onclick="checkTransformation(5)">Check</button>
+        <div class="feedback" id="f5"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="pill">Part 6</span>
+      <h2>Activity D: Find the Mistake</h2>
+      <p>Choose the correct sentence.</p>
+
+      <div class="card">
+        <p class="sentence"><strong>1. Which sentence is correct?</strong></p>
+        <div id="m1"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>2. Which sentence is correct?</strong></p>
+        <div id="m2"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>3. Which sentence is correct?</strong></p>
+        <div id="m3"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>4. Which sentence is correct?</strong></p>
+        <div id="m4"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="pill">Part 7</span>
+      <h2>Activity E: Meaning Focus</h2>
+      <p>Choose the best answer. Think about why passive voice is used.</p>
+
+      <div class="card">
+        <p class="sentence"><strong>1. “The road was closed yesterday.” Why might passive be used here?</strong></p>
+        <div id="mf1"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>2. “The prize was won by Lina.” What is the focus?</strong></p>
+        <div id="mf2"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>3. “My phone was stolen.” Why is this passive useful?</strong></p>
+        <div id="mf3"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="pill">Part 8</span>
+      <h2>Long Passive Voice Question Set</h2>
+      <p>
+        These questions are for A1 learners, but they are made more challenging by using careful choices.
+        There are <strong>8 questions</strong>. Each correct answer = <strong>5 points</strong>.
+      </p>
+
+      <div class="card">
+        <p class="sentence"><strong>1. The book ______ by Sara every week.</strong></p>
+        <div id="a1q1"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>2. The room ______ every day.</strong></p>
+        <div id="a1q2"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>3. Choose the correct passive sentence.</strong></p>
+        <div id="a1q3"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>4. The food ______ by my mother now.</strong></p>
+        <div id="a1q4"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>5. A new bridge ______ next year.</strong></p>
+        <div id="a1q5"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>6. The homework ______ by the students yesterday.</strong></p>
+        <div id="a1q6"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>7. Choose the correct passive sentence.</strong></p>
+        <div id="a1q7"></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="sentence"><strong>8. English ______ in many countries.</strong></p>
+        <div id="a1q8"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="pill">Part 9</span>
+      <h2>Mini Writing Challenge</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Task A</h3>
+          <p>Write <strong>two active sentences</strong>.</p>
+          <textarea rows="5" placeholder="Example:
+The teacher opened the door.
+My mother cooked dinner."></textarea>
+        </div>
+        <div class="card">
+          <h3>Task B</h3>
+          <p>Change them into <strong>two passive sentences</strong>.</p>
+          <textarea rows="5" placeholder="Example:
+The door was opened by the teacher.
+Dinner was cooked by my mother."></textarea>
+        </div>
+      </div>
+      <p class="small">Use this as a speaking or writing task at the end of the lesson.</p>
+    </div>
+
+    <div class="section">
+      <span class="pill">Part 10</span>
+      <h2>Final Challenge</h2>
+      <p>Answer the final question in your own words.</p>
+      <div class="card">
+        <p class="sentence"><strong>Turn this sentence into the passive:</strong> The workers build houses in this city.</p>
+        <textarea id="exitAnswer" rows="3" placeholder="Write your answer here"></textarea>
+        <div class="check-row">
+          <button onclick="checkExit()">Submit Final Answer</button>
+        </div>
+        <div class="feedback" id="exitFeedback"></div>
+      </div>
+
+      <div class="score-wrap">
+        <div class="score-box">Total Score: <span id="totalScore">0</span></div>
+        <button class="secondary" onclick="window.scrollTo({top:0, behavior:'smooth'})">Back to Top</button>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Built as a longer and fuller GitHub lesson page for smart Grade 10 EFL students — Teacher: Sema Abed.
+    </div>
+  </div>
+
+  <script>
+    let totalScore = 0;
+
+    function updateScore(points) {
+      totalScore += points;
+      document.getElementById("totalScore").textContent = totalScore;
+    }
+
+    function normalize(text) {
+      return text.toLowerCase().replace(/[.?!]/g, "").replace(/\s+/g, " ").trim();
+    }
+
+    function renderMCQ(containerId, questionData, points = 1) {
+      const container = document.getElementById(containerId);
+      questionData.options.forEach((opt, index) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.textContent = opt;
+        btn.onclick = () => {
+          if (container.dataset.answered) return;
+          container.dataset.answered = "yes";
+
+          const buttons = container.querySelectorAll("button");
+          buttons.forEach(b => b.classList.add("locked"));
+          buttons[questionData.correct].classList.add("correct");
+
+          if (index === questionData.correct) {
+            btn.classList.add("correct");
+            updateScore(points);
+          } else {
+            btn.classList.add("wrong");
+          }
+        };
+        container.appendChild(btn);
+      });
+    }
+
+    // Active or Passive
+    renderMCQ("ap1", { options: ["Active", "Passive"], correct: 1 }, 1);
+    renderMCQ("ap2", { options: ["Active", "Passive"], correct: 0 }, 1);
+    renderMCQ("ap3", { options: ["Active", "Passive"], correct: 1 }, 1);
+    renderMCQ("ap4", { options: ["Active", "Passive"], correct: 0 }, 1);
+    renderMCQ("ap5", { options: ["Active", "Passive"], correct: 1 }, 1);
+    renderMCQ("ap6", { options: ["Active", "Passive"], correct: 0 }, 1);
+
+    // Choose correct passive form
+    renderMCQ("cf1", {
+      options: [
+        "Houses are built in this town.",
+        "Houses is built in this town.",
+        "Houses built in this town."
+      ],
+      correct: 0
+    }, 2);
+
+    renderMCQ("cf2", {
+      options: [
+        "My bike was stolen.",
+        "My bike is stole.",
+        "My bike stolen by."
+      ],
+      correct: 0
+    }, 2);
+
+    renderMCQ("cf3", {
+      options: [
+        "The results will announced tomorrow.",
+        "The results will be announced tomorrow.",
+        "The results are be announced tomorrow."
+      ],
+      correct: 1
+    }, 2);
+
+    renderMCQ("cf4", {
+      options: [
+        "Arabic is spoken in many countries.",
+        "Arabic spoken in many countries.",
+        "Arabic is speak in many countries."
+      ],
+      correct: 0
+    }, 2);
+
+    function checkTransformation(num) {
+      const answers = {
+        1: ["the classroom was cleaned by the students", "the classroom was cleaned"],
+        2: ["hamlet was written by shakespeare", "hamlet was written"],
+        3: ["a science fair will be organized by the school", "a science fair will be organized"],
+        4: ["english is spoken all over the world"],
+        5: ["the car was repaired by the mechanic", "the car was repaired"]
+      };
+
+      const input = document.getElementById("t" + num).value;
+      const feedback = document.getElementById("f" + num);
+      const user = normalize(input);
+
+      if (answers[num].includes(user)) {
+        feedback.textContent = "Correct!";
+        feedback.className = "feedback correct-text";
+        if (!feedback.dataset.done) {
+          updateScore(3);
+          feedback.dataset.done = "yes";
+        }
+      } else {
+        feedback.textContent = "Try again. Check the be verb and the past participle.";
+        feedback.className = "feedback wrong-text";
+      }
+    }
+
+    // Mistakes
+    renderMCQ("m1", {
+      options: [
+        "The cake was made by my mother.",
+        "The cake was make by my mother.",
+        "The cake is made by my mother yesterday."
+      ],
+      correct: 0
+    }, 2);
+
+    renderMCQ("m2", {
+      options: [
+        "A new car will be bought next month.",
+        "A new car will bought next month.",
+        "A new car will be buy next month."
+      ],
+      correct: 0
+    }, 2);
+
+    renderMCQ("m3", {
+      options: [
+        "The homework is checked every day.",
+        "The homework checked every day.",
+        "The homework is check every day."
+      ],
+      correct: 0
+    }, 2);
+
+    renderMCQ("m4", {
+      options: [
+        "The film was seen by many people.",
+        "The film was saw by many people.",
+        "The film seen by many people."
+      ],
+      correct: 0
+    }, 2);
+
+    // Meaning focus
+    renderMCQ("mf1", {
+      options: [
+        "Because the action is more important than the doer.",
+        "Because passive is always easier.",
+        "Because there is no verb in the sentence."
+      ],
+      correct: 0
+    }, 2);
+
+    renderMCQ("mf2", {
+      options: [
+        "The focus is on Lina’s friend.",
+        "The focus is on the prize/result.",
+        "There is no focus."
+      ],
+      correct: 1
+    }, 2);
+
+    renderMCQ("mf3", {
+      options: [
+        "Because the important thing is what happened to the phone.",
+        "Because active voice is impossible.",
+        "Because passive has no subject."
+      ],
+      correct: 0
+    }, 2);
+
+    // Long A1 set - 5 points each
+    renderMCQ("a1q1", {
+      options: [
+        "is read",
+        "reads",
+        "reading"
+      ],
+      correct: 0
+    }, 5);
+
+    renderMCQ("a1q2", {
+      options: [
+        "cleans",
+        "is cleaned",
+        "clean"
+      ],
+      correct: 1
+    }, 5);
+
+    renderMCQ("a1q3", {
+      options: [
+        "The apple is eaten by the boy.",
+        "The apple eats by the boy.",
+        "The apple is eat by the boy."
+      ],
+      correct: 0
+    }, 5);
+
+    renderMCQ("a1q4", {
+      options: [
+        "cooks",
+        "is cooked",
+        "cooked is"
+      ],
+      correct: 1
+    }, 5);
+
+    renderMCQ("a1q5", {
+      options: [
+        "will be built",
+        "will built",
+        "is build"
+      ],
+      correct: 0
+    }, 5);
+
+    renderMCQ("a1q6", {
+      options: [
+        "was done",
+        "is done",
+        "were do"
+      ],
+      correct: 0
+    }, 5);
+
+    renderMCQ("a1q7", {
+      options: [
+        "The door was opened by Ali.",
+        "The door opened by Ali.",
+        "The door was open by Ali."
+      ],
+      correct: 0
+    }, 5);
+
+    renderMCQ("a1q8", {
+      options: [
+        "speaks",
+        "is spoken",
+        "is speak"
+      ],
+      correct: 1
+    }, 5);
+
+    function checkExit() {
+      const answer = normalize(document.getElementById("exitAnswer").value);
+      const feedback = document.getElementById("exitFeedback");
+      const accepted = [
+        "houses are built in this city by the workers",
+        "houses are built by the workers in this city",
+        "houses are built in this city"
+      ];
+
+      if (accepted.includes(answer)) {
+        feedback.textContent = "Excellent final answer!";
+        feedback.className = "feedback correct-text";
+        if (!feedback.dataset.done) {
+          updateScore(6);
+          feedback.dataset.done = "yes";
+        }
+      } else {
+        feedback.textContent = "Try again. Start with the object: Houses ...";
+        feedback.className = "feedback wrong-text";
+      }
+    }
+  </script>
+</body>
+</html>
